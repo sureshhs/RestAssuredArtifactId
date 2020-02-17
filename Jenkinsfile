@@ -16,16 +16,19 @@ pipeline {
 	stages {
 			stage ('Compile stage') {
 					steps {
+						echo 'Compile RestAssured API maven project'
 						bat 'mvn clean compile'
 					}
 			}
 			stage ('Run test stage') {
 					steps {
+						echo 'Run unit tests'
 						bat 'mvn test'
 					}
 			}	
 			stage ('Deploy stage') {
 					steps {
+						echo 'Run instal'
 						bat 'mvn install'
 					}
 			}
